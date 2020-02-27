@@ -1,19 +1,9 @@
-FROM ubuntu:16.04
-
-MAINTANER Your Name "walter_santillan@hotmail.com"
-
-RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
-
-# We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /app/requirements.txt
+FROM python:3
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /app
+COPY ..
 
-ENTRYPOINT [ "python" ]
-
-CMD [ "app.py" ]
+CMD [ "PYTHON", "./app/app.py" ]
