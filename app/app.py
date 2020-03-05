@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, abort, make_response, request, url_for
-from flask_restplus import Api, Resource, fields
+from flask_restplus import Api, Resource
 
 app = Flask(__name__)
 api = Api(app = app,
