@@ -44,7 +44,7 @@ spec:
   - protocol: TCP
     port: 80
     # targetPort: 8080
-    nodePort: 30333
+    nodePort: 30313
 
 ---
 apiVersion: extensions/v1beta1
